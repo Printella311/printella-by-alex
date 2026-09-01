@@ -3,75 +3,294 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="description" content="Printella by Alex – liebevoll 3D-gedruckte Produkte.">
 <title>Printella by Alex</title>
 
 <style>
+:root{
+  --bg:#fbfaf8;
+  --surface:#ffffff;
+  --text:#2f2b2c;
+  --muted:#746d70;
+  --line:#ece7e4;
+  --accent:#b88492;
+  --paypal:#0070ba;
+  --dark:#292526;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#fff8f4;
-    color:#493b3d;
-    text-align:center;
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:linear-gradient(180deg,#fbfaf8,#ffffff);
+  color:var(--text);
+  line-height:1.6;
+}
+
+.container{
+  width:min(1040px,calc(100% - 32px));
+  margin:auto;
 }
 
 header{
-    padding:55px 20px;
-    background:linear-gradient(135deg,#f7d9df,#f3c6d0);
+  padding:22px 0 8px;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
+}
+
+.brand{
+  font-size:24px;
+  font-weight:800;
+}
+
+.brand span{
+  color:var(--accent);
+}
+
+.nav a,
+.legal-nav a{
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.hero{
+  text-align:center;
+  padding:68px 0 48px;
+}
+
+.eyebrow{
+  display:inline-block;
+  padding:8px 13px;
+  border:1px solid #e7d8dd;
+  background:#ffffffb8;
+  border-radius:999px;
+  color:#936b77;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
 }
 
 h1{
-    font-size:42px;
-    margin:0;
+  max-width:760px;
+  margin:20px auto 14px;
+  font-size:clamp(42px,8vw,76px);
+  line-height:1.02;
+  letter-spacing:-3px;
 }
 
-.subtitle{
-    font-size:19px;
-    margin-top:12px;
+.hero p{
+  max-width:620px;
+  margin:auto;
+  color:var(--muted);
+  font-size:18px;
 }
 
 main{
-    max-width:700px;
-    margin:auto;
-    padding:35px 20px;
+  padding:10px 0 70px;
 }
 
-.product{
-    background:white;
-    padding:30px 20px;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+.product-card{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 18px 60px rgba(45,35,38,.08);
 }
 
-.product h2{
-    font-size:27px;
+.visual{
+  padding:12px;
+  background:#f2efed;
 }
 
-.price{
-    font-size:28px;
-    font-weight:bold;
-    margin:20px;
+.visual img{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:540px;
+  object-fit:cover;
+  border-radius:20px;
 }
 
-.shipping{
-    color:#777;
+.product-info{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:48px;
+}
+
+.product-tag{
+  color:var(--accent);
+  font-weight:800;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1.2px;
+}
+
+h2{
+  margin:12px 0 14px;
+  font-size:clamp(30px,4vw,46px);
+  line-height:1.1;
+}
+
+.description{
+  margin:0 0 26px;
+  color:var(--muted);
+  font-size:17px;
+}
+
+.price-line{
+  display:flex;
+  justify-content:space-between;
+  padding:13px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.price-line span{
+  color:var(--muted);
+}
+
+.total{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  padding:20px 0 24px;
+}
+
+.total span{
+  color:var(--muted);
+}
+
+.total strong{
+  font-size:32px;
 }
 
 .buy{
-    display:inline-block;
-    background:#0070ba;
-    color:white;
-    padding:16px 30px;
-    border-radius:14px;
-    text-decoration:none;
-    font-size:18px;
-    font-weight:bold;
+  display:block;
+  padding:16px 20px;
+  border-radius:14px;
+  text-align:center;
+  text-decoration:none;
+  font-weight:800;
+  font-size:17px;
+  color:#fff;
+  background:var(--paypal);
 }
 
-.note{
-    margin-top:15px;
-    font-size:14px;
-    color:#777;
+.safe-note{
+  text-align:center;
+  color:#8b8386;
+  font-size:12px;
+  margin-top:12px;
+}
+
+.benefits{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:22px;
+}
+
+.benefit{
+  padding:20px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:#ffffffcc;
+}
+
+.benefit strong{
+  display:block;
+  margin-bottom:5px;
+}
+
+.benefit span{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.contact{
+  margin-top:22px;
+  padding:34px;
+  border-radius:24px;
+  background:var(--dark);
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+}
+
+.contact h3{
+  margin:0 0 5px;
+  font-size:26px;
+}
+
+.contact p{
+  margin:0;
+  color:#d5d0d1;
+}
+
+.contact a{
+  padding:12px 17px;
+  border-radius:12px;
+  background:#fff;
+  color:var(--dark);
+  text-decoration:none;
+  font-weight:800;
+}
+
+.legal-nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px 18px;
+  padding:34px 0 14px;
+  font-size:13px;
+}
+
+.legal{
+  margin-top:14px;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+}
+
+.legal h2{
+  font-size:26px;
+  margin:0 0 14px;
+}
+
+.legal p{
+  color:#5f585a;
+}
+
+footer{
+  text-align:center;
+  padding:26px 0 42px;
+  color:#8b8386;
+  font-size:12px;
+}
+
+@media(max-width:800px){
+  .nav a{display:none}
+  .hero{padding:46px 0 34px}
+  .product-card{grid-template-columns:1fr}
+  .visual img{min-height:auto;aspect-ratio:4/3}
+  .product-info{padding:30px 22px}
+  .benefits{grid-template-columns:1fr}
+  .contact{display:block}
+  .contact a{display:inline-block;margin-top:18px}
 }
 </style>
 </head>
@@ -79,160 +298,272 @@ main{
 <body>
 
 <header>
-    <h1>Printella by Alex ♡</h1>
-    <div class="subtitle">3D-gedruckt · persönlich · mit Liebe gemacht</div>
+  <div class="container nav">
+    <div class="brand">Printella by Alex <span>♡</span></div>
+    <a href="#produkt">Produkt ansehen</a>
+  </div>
+
+  <div class="container hero">
+    <span class="eyebrow">3D-Druck · mit Liebe gemacht</span>
+    <h1>Kleine Dinge, die Freude machen.</h1>
+    <p>Liebevoll 3D-gedruckte Produkte – modern, praktisch und mit Persönlichkeit.</p>
+  </div>
 </header>
 
-<main>
+<main class="container">
 
-<div class="product">
-<img src="FC7B45D8-B616-43C6-BB54-1CDE7E46C75F.png" alt="Frenchie Hundekotbeutel-Aufbewahrung" style="width:100%; border-radius:18px; margin-bottom:20px;">
+<section class="product-card" id="produkt">
 
-    <h2>🐶 Frenchie Hundekotbeutel-Aufbewahrung</h2>
+  <div class="visual">
+    <img src="FC7B45D8-B616-43C6-BB54-1CDE7E46C75F.png"
+         alt="Frenchie Hundekotbeutel-Aufbewahrung">
+  </div>
 
-    <p>
-        Klein, handlich und perfekt für unterwegs.<br>
-        Deine Hundekotbeutel sind immer griffbereit.
+  <div class="product-info">
+
+    <div class="product-tag">Printella Lieblingsstück</div>
+
+    <h2>Frenchie Hundekotbeutel-Aufbewahrung</h2>
+
+    <p class="description">
+      Klein, handlich und perfekt für unterwegs.
+      Deine Hundekotbeutel sind schnell griffbereit –
+      praktisch und gleichzeitig ein süßer Hingucker für jede Gassirunde.
     </p>
 
-    <div class="price">18,90 €</div>
+    <div class="price-line">
+      <span>Produktpreis</span>
+      <strong>18,90 €</strong>
+    </div>
 
-    <p class="shipping">+ 4,90 € Versand</p>
+    <div class="price-line">
+      <span>Versand</span>
+      <strong>4,90 €</strong>
+    </div>
 
-    <p><strong>Gesamt: 23,80 €</strong></p>
+    <div class="total">
+      <span>Gesamt</span>
+      <strong>23,80 €</strong>
+    </div>
 
-    <a class="buy" href="https://www.paypal.com/ncp/payment/DNXZ926WA4BCW" target="_blank">
-        Jetzt kaufen 💚
+    <a class="buy"
+       href="https://www.paypal.com/ncp/payment/DNXZ926WA4BCW"
+       target="_blank"
+       rel="noopener">
+       Mit PayPal kaufen
     </a>
 
-    <p class="note">
-        Sicher bezahlen · liebevoll gefertigt
+    <p class="safe-note">
+      Sichere Zahlungsabwicklung über PayPal
     </p>
 
-</div>
+  </div>
+</section>
+
+<section class="benefits">
+
+  <div class="benefit">
+    <strong>3D-gedruckt</strong>
+    <span>Mit Sorgfalt gefertigt.</span>
+  </div>
+
+  <div class="benefit">
+    <strong>Klein & praktisch</strong>
+    <span>Ideal für unterwegs.</span>
+  </div>
+
+  <div class="benefit">
+    <strong>Mit Persönlichkeit</strong>
+    <span>Besondere Designs statt Massenware.</span>
+  </div>
+
+</section>
+
+<section class="contact">
+
+  <div>
+    <h3>Du hast einen Wunsch?</h3>
+    <p>Fragen zu Farben, Personalisierung oder eigenen Ideen? Schreib mir gerne.</p>
+  </div>
+
+  <a href="mailto:alexandra-seligenstadt@web.de?subject=Anfrage%20an%20Printella%20by%20Alex">
+    E-Mail senden
+  </a>
+
+</section>
+
+<nav class="legal-nav">
+  <a href="#impressum">Impressum</a>
+  <a href="#datenschutz">Datenschutz</a>
+  <a href="#widerruf">Widerruf</a>
+</nav>
+
+<section class="legal" id="impressum">
+
+<h2>Impressum</h2>
+
+<p>
+<strong>Printella by Alex</strong><br>
+Inhaberin: Alexandra Ungethüm<br>
+Brüder-Grimm-Str. 47<br>
+63533 Mainhausen<br>
+Deutschland
+</p>
+
+<p>
+<strong>Kontakt</strong><br>
+E-Mail:
+<a href="mailto:alexandra-seligenstadt@web.de">
+alexandra-seligenstadt@web.de
+</a>
+</p>
+
+<p>
+Kleinunternehmerin gemäß § 19 UStG.<br>
+Es wird keine Umsatzsteuer ausgewiesen.
+</p>
+
+</section>
+
+<section class="legal" id="datenschutz">
+
+<h2>Datenschutzerklärung</h2>
+
+<p>
+<strong>1. Verantwortliche Stelle</strong><br>
+Alexandra Ungethüm<br>
+Brüder-Grimm-Str. 47<br>
+63533 Mainhausen<br>
+E-Mail: alexandra-seligenstadt@web.de
+</p>
+
+<p>
+<strong>2. Hosting über GitHub Pages</strong><br>
+Diese Website wird über GitHub Pages bereitgestellt.
+Beim Aufruf der Website können technisch notwendige Daten wie
+IP-Adresse, Browserinformationen und Zeitpunkt des Zugriffs verarbeitet werden.
+</p>
+
+<p>
+<strong>3. Kontakt per E-Mail</strong><br>
+Wenn du mich per E-Mail kontaktierst, werden die von dir übermittelten Daten
+nur zur Bearbeitung deiner Anfrage verwendet.
+</p>
+
+<p>
+<strong>4. Zahlung über PayPal</strong><br>
+Beim Klick auf den Kaufbutton wirst du zu PayPal weitergeleitet.
+Die Zahlungsabwicklung erfolgt direkt über PayPal.
+Zahlungsdaten wie Kreditkarten- oder Kontodaten werden nicht auf dieser Website gespeichert.
+</p>
+
+<p>
+<strong>5. Deine Rechte</strong><br>
+Du hast im Rahmen der gesetzlichen Voraussetzungen unter anderem das Recht
+auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung
+deiner personenbezogenen Daten.
+</p>
+
+</section>
+
+<section class="legal" id="widerruf">
+
+<h2>Widerrufsbelehrung</h2>
+
+<p>
+<strong>Widerrufsrecht</strong><br>
+Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen
+diesen Vertrag zu widerrufen.
+</p>
+
+<p>
+Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag,
+an dem Sie oder ein von Ihnen benannter Dritter die Ware erhalten haben.
+</p>
+
+<p>
+Um Ihr Widerrufsrecht auszuüben, müssen Sie mich mittels einer eindeutigen
+Erklärung über Ihren Entschluss informieren:
+</p>
+
+<p>
+Alexandra Ungethüm<br>
+Brüder-Grimm-Str. 47<br>
+63533 Mainhausen<br>
+E-Mail: alexandra-seligenstadt@web.de
+</p>
+
+<p>
+Zur Wahrung der Widerrufsfrist reicht es aus,
+dass Sie die Mitteilung über die Ausübung des Widerrufsrechts
+vor Ablauf der Widerrufsfrist absenden.
+</p>
+
+<p>
+<strong>Folgen des Widerrufs</strong><br>
+Wenn Sie diesen Vertrag widerrufen, erstatte ich Ihnen die erhaltenen Zahlungen
+einschließlich der Kosten der günstigsten angebotenen Standardlieferung
+spätestens binnen vierzehn Tagen ab Eingang Ihrer Widerrufserklärung.
+</p>
+
+<p>
+Die Rückzahlung kann verweigert werden,
+bis die Ware zurückerhalten wurde oder Sie nachgewiesen haben,
+dass Sie die Ware zurückgesandt haben.
+</p>
+
+<p>
+Sie haben die Ware spätestens binnen vierzehn Tagen nach Ihrem Widerruf
+zurückzusenden. Die unmittelbaren Kosten der Rücksendung tragen Sie.
+</p>
+
+<p>
+<strong>Ausschluss des Widerrufsrechts</strong><br>
+Bei Waren, die individuell nach Ihren persönlichen Vorgaben angefertigt
+oder eindeutig personalisiert wurden, besteht kein Widerrufsrecht.
+</p>
+
+<h3>Muster-Widerrufsformular</h3>
+
+<p>
+Wenn Sie den Vertrag widerrufen wollen,
+senden Sie bitte folgende Angaben per E-Mail an
+alexandra-seligenstadt@web.de:
+</p>
+
+<p>
+Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über den Kauf folgender Ware:
+<br><br>
+_______________________________
+<br><br>
+
+Bestellt am / erhalten am:
+<br>
+_______________________________
+<br><br>
+
+Name:
+<br>
+_______________________________
+<br><br>
+
+Anschrift:
+<br>
+_______________________________
+<br><br>
+
+Datum:
+<br>
+_______________________________
+</p>
+
+</section>
 
 </main>
-<section style="max-width:700px;margin:30px auto;padding:20px;text-align:left;background:#fff;border-radius:18px;">
- <div style="text-align:center; margin:30px 0;">
-  <a href="#impressum">Impressum</a> ·
-  <a href="#datenschutz">Datenschutz</a> ·
-  <a href="#widerruf">Widerruf</a>
-</div>
-    <h2 id="impressum">Impressum</h2>
-  <p>
-    <strong>Printella by Alex</strong><br>
-    Inhaberin: Alexandra Ungethüm<br>
-    Brüder-Grimm-Str. 47<br>
-    63533 Mainhausen<br>
-    Deutschland
-  </p>
 
-  <p>
-    <strong>Kontakt</strong><br>
-    E-Mail: <a href="mailto:alexandra-seligenstadt@web.de">alexandra-seligenstadt@web.de</a>
-  </p>
+<footer>
+© 2026 Printella by Alex · Instagram: @printella_by_alex
+</footer>
 
-  <p>
-    Kleinunternehmerin gemäß § 19 UStG.<br>
-    Es wird keine Umsatzsteuer ausgewiesen.
-  </p>
-</section>
-    <section style="max-width:700px;margin:30px auto;padding:20px;text-align:left;background:#fff;border-radius:18px;">
-  <h2 id="datenschutz">Datenschutzerklärung</h2>
-
-  <p>
-    <strong>1. Verantwortliche Stelle</strong><br>
-    Alexandra Ungethüm<br>
-    Brüder-Grimm-Str. 47<br>
-    63533 Mainhausen<br>
-    E-Mail: alexandra-seligenstadt@web.de
-  </p>
-
-  <p>
-    <strong>2. Hosting über GitHub Pages</strong><br>
-    Diese Website wird über GitHub Pages bereitgestellt. Beim Aufruf der Website können technisch notwendige Daten wie IP-Adresse, Browserinformationen und Zeitpunkt des Zugriffs verarbeitet werden.
-  </p>
-
-  <p>
-    <strong>3. Kontakt per E-Mail</strong><br>
-    Wenn du mich per E-Mail kontaktierst, werden die von dir übermittelten Daten nur zur Bearbeitung deiner Anfrage verwendet.
-  </p>
-
-  <p>
-    <strong>4. Zahlung über PayPal</strong><br>
-    Beim Klick auf den Kaufbutton wirst du zu PayPal weitergeleitet. Die Zahlungsabwicklung erfolgt direkt über PayPal. Zahlungsdaten wie Kreditkarten- oder Kontodaten werden nicht auf dieser Website gespeichert.
-  </p>
-
-  <p>
-    <strong>5. Deine Rechte</strong><br>
-    Du hast im Rahmen der gesetzlichen Voraussetzungen unter anderem das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner personenbezogenen Daten.
-  </p>
-</section>
-<section style="max-width:700px;margin:30px auto;padding:20px;text-align:left;background:#fff;border-radius:18px;">
-  <h2>Widerrufsbelehrung</h2>
-
-  <p>
-    <
-        <h2 id="widerruf">Widerrufsbelehrung</h2>
-    Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.
-  </p>
-
-  <p>
-    Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter die Ware erhalten haben.
-  </p>
-
-  <p>
-    Um Ihr Widerrufsrecht auszuüben, müssen Sie mich mittels einer eindeutigen Erklärung über Ihren Entschluss informieren:
-  </p>
-
-  <p>
-    Alexandra Ungethüm<br>
-    Brüder-Grimm-Str. 47<br>
-    63533 Mainhausen<br>
-    E-Mail: alexandra-seligenstadt@web.de
-  </p>
-
-  <p>
-    Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.
-  </p>
-
-  <p>
-    <strong>Folgen des Widerrufs</strong><br>
-    Wenn Sie diesen Vertrag widerrufen, erstatte ich Ihnen die erhaltenen Zahlungen einschließlich der Kosten der günstigsten angebotenen Standardlieferung spätestens binnen vierzehn Tagen ab Eingang Ihrer Widerrufserklärung.
-  </p>
-
-  <p>
-    Die Rückzahlung kann verweigert werden, bis die Ware zurückerhalten wurde oder Sie nachgewiesen haben, dass Sie die Ware zurückgesandt haben.
-  </p>
-
-  <p>
-    Sie haben die Ware spätestens binnen vierzehn Tagen nach Ihrem Widerruf zurückzusenden. Die unmittelbaren Kosten der Rücksendung tragen Sie.
-  </p>
-
-  <p>
-    <strong>Ausschluss des Widerrufsrechts</strong><br>
-    Bei Waren, die individuell nach Ihren persönlichen Vorgaben angefertigt oder eindeutig personalisiert wurden, besteht kein Widerrufsrecht.
-  </p>
-
-  <h3>Muster-Widerrufsformular</h3>
-
-  <p>
-    Wenn Sie den Vertrag widerrufen wollen, senden Sie bitte folgende Angaben per E-Mail an alexandra-seligenstadt@web.de:
-  </p>
-
-  <p>
-    Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über den Kauf folgender Ware:<br><br>
-    _______________________________<br><br>
-    Bestellt am / erhalten am:<br>
-    _______________________________<br><br>
-    Name:<br>
-    _______________________________<br><br>
-    Anschrift:<br>
-    _______________________________<br><br>
-    Datum:<br>
-    _______________________________
-  </p>
-</section>
 </body>
 </html>
-
